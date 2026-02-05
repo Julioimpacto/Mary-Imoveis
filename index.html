@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mary Corretora | Corretora de Imóveis Creci 168182</title>
+    <meta
+      name="description"
+      content="Seleção exclusiva de imóveis da Mary Corretora."
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background-color: transparent;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        position: relative;
+      }
+
+      /* Navbar fina e escura no topo */
+      .top-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #000;
+        padding: 4px clamp(16px, 5vw, 48px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 30;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        min-height: 32px;
+        box-sizing: border-box;
+      }
+
+      .top-navbar__content {
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.125rem;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .top-navbar__logo {
+        height: 44px;
+        width: auto;
+        display: block;
+        flex-shrink: 0;
+      }
+
+      .top-navbar__right {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .top-navbar__info {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-left: auto;
+      }
+
+      .top-navbar__info span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .top-navbar__info i {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* Links de redes sociais na navbar fina */
+      .top-navbar__links {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .top-navbar__links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 1.125rem;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .top-navbar__links a:hover {
+        color: #fbbf24;
+      }
+
+      .top-navbar__links i {
+        font-size: 1.5rem;
+      }
+
+      /* Links de navegação diretamente sobre o carrossel */
+      .carousel-nav {
+        position: fixed;
+        top: 32px;
+        left: 0;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 20;
+        pointer-events: none;
+        background: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        outline: none !important;
+        transform: translateY(20px);
+      }
+
+      .carousel-nav::before,
+      .carousel-nav::after {
+        display: none !important;
+        content: none !important;
+        background: transparent !important;
+      }
+
+      .carousel-nav ul {
+        margin: 18px clamp(16px, 5vw, 48px);
+        padding: 0;
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        font-size: 1.125rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        justify-content: center;
+        pointer-events: auto;
+        background: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        outline: none !important;
+      }
+
+      .carousel-nav ul::before,
+      .carousel-nav ul::after {
+        display: none !important;
+        content: none !important;
+        background: transparent !important;
+      }
+
+      .carousel-nav li {
+        background: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+      }
+
+      .carousel-nav li::before,
+      .carousel-nav li::after {
+        display: none !important;
+        content: none !important;
+        background: transparent !important;
+      }
+
+      .carousel-nav a {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+        background: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8),
+                     0 1px 2px rgba(0, 0, 0, 0.9);
+      }
+
+      .carousel-nav a::before,
+      .carousel-nav a::after {
+        display: none !important;
+        content: none !important;
+        background: transparent !important;
+      }
+
+      .carousel-nav a:hover,
+      .carousel-nav a:focus-visible {
+        color: #fbbf24;
+        outline: none;
+      }
+
+      .carousel-nav__whatsapp {
+        color: #10b981;
+        font-size: 3.25rem;
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.3s ease;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: clamp(16px, 5vw, 48px);
+        line-height: 1;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: auto;
+        background: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+      }
+
+      .carousel-nav__whatsapp::before,
+      .carousel-nav__whatsapp::after {
+        display: none !important;
+        content: none !important;
+        background: transparent !important;
+      }
+
+      .carousel-nav__whatsapp:hover {
+        color: #34d399;
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .carousel-nav__whatsapp:focus-visible {
+        outline: 2px solid #fbbf24;
+        outline-offset: 2px;
+      }
+
+      .hero-slider {
+        position: fixed;
+        top: 32px; /* Valor inicial - será ajustado dinamicamente via JavaScript */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 32px); /* Valor inicial - será ajustado dinamicamente */
+        z-index: 1;
+        margin: 0;
+        padding: 0;
+      }
+
+      .hero-swiper,
+      .swiper-wrapper,
+      .swiper-slide {
+        height: 100%;
+      }
+
+      .swiper-slide {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .slide-content {
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 0 1.5rem clamp(60px, 18vh, 140px);
+      }
+
+      .slide-stack {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: clamp(30px, 6vh, 70px);
+        transform: translateY(20%);
+      }
+
+      .slide-stack img {
+        filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.8)) 
+                drop-shadow(0 0 4px rgba(0, 0, 0, 0.6))
+                drop-shadow(0 0 6px rgba(0, 0, 0, 0.4));
+      }
+
+      .logo-plaque {
+        width: clamp(180px, 35vw, 260px);
+        aspect-ratio: 1 / 1;
+        border-radius: 32px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: radial-gradient(circle at top, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.35));
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(18px, 3vw, 28px);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+
+      .logo-plaque img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .logo-legend {
+        margin-top: 1.5rem;
+        text-align: center;
+        color: #fff;
+      }
+
+      .logo-caption-name {
+        font-size: clamp(2rem, 5.5vw, 3.5rem);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 0;
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.8), 0 1px 1px rgba(0, 0, 0, 0.6), 1px 0 1px rgba(0, 0, 0, 0.6), -1px 0 1px rgba(0, 0, 0, 0.6), 0 -1px 1px rgba(0, 0, 0, 0.6);
+      }
+
+      .logo-caption-role {
+        font-size: clamp(0.9rem, 2vw, 1.25rem);
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        margin: 0.35rem 0 0;
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.8), 0 1px 1px rgba(0, 0, 0, 0.6), 1px 0 1px rgba(0, 0, 0, 0.6), -1px 0 1px rgba(0, 0, 0, 0.6), 0 -1px 1px rgba(0, 0, 0, 0.6);
+      }
+
+      /* Galeria */
+      .gallery-section {
+        position: relative;
+        padding: clamp(32px, 6vw, 64px) clamp(16px, 6vw, 72px) clamp(48px, 10vw, 96px) clamp(16px, 6vw, 72px);
+        background: #f4f7fb;
+        z-index: 2;
+        margin-top: 100vh;
+        transform: translateY(0);
+      }
+
+      .gallery-intro {
+        text-align: center;
+        max-width: 640px;
+        margin: 0 auto clamp(36px, 6vw, 64px);
+      }
+
+      .gallery-title {
+        font-size: clamp(1.75rem, 4vw, 2.75rem);
+        color: #0f172a;
+        margin-bottom: 0.75rem;
+      }
+
+      .gallery-subtitle {
+        color: #475569;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+      }
+
+      .property-card {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 25px 60px rgba(15, 23, 42, 0.08);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #e2e8f0;
+      }
+
+      .property-media {
+        position: relative;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+      }
+
+      .property-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .property-card:hover .property-media img {
+        transform: scale(1.03);
+      }
+
+      .property-badge {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        background: #1d4ed8;
+        color: #fff;
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        padding: 6px 14px;
+        border-radius: 999px;
+        text-transform: uppercase;
+      }
+
+      .property-badge--green {
+        background: #16a34a;
+      }
+
+      .property-content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .property-location {
+        font-size: 0.92rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        color: #0f172a;
+      }
+
+      .property-title {
+        font-size: 1rem;
+        color: #1e293b;
+        margin: 0;
+      }
+
+      .property-id {
+        font-size: 0.85rem;
+        color: #94a3b8;
+      }
+
+      .property-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        font-size: 0.85rem;
+        color: #475569;
+      }
+
+      .property-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .property-meta svg {
+        width: 16px;
+        height: 16px;
+        color: #1d4ed8;
+        flex-shrink: 0;
+      }
+
+      .property-price {
+        margin-top: auto;
+        font-size: 1.35rem;
+        font-weight: 600;
+        color: #0f172a;
+      }
+      .swiper-pagination {
+        bottom: 32px !important;
+      }
+
+      .swiper-pagination-bullet {
+        background: rgba(255, 255, 255, 0.45);
+        opacity: 1;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: #fbbf24;
+      }
+
+      .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        background-color: rgba(0, 0, 0, 0.35);
+        color: #fff;
+        width: 48px;
+        height: 48px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        font-size: 28px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        z-index: 3;
+      }
+
+      .nav-btn:focus-visible {
+        outline: 2px solid #fbbf24;
+        outline-offset: 2px;
+      }
+
+      .nav-btn:hover {
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+
+      .nav-btn--prev {
+        left: 16px;
+      }
+
+      .nav-btn--next {
+        right: 16px;
+      }
+
+      @media (min-width: 768px) {
+        .nav-btn {
+          width: 56px;
+          height: 56px;
+          font-size: 32px;
+        }
+
+        .nav-btn--prev {
+          left: 32px;
+        }
+
+        .nav-btn--next {
+          right: 32px;
+        }
+
+      }
+
+      @media (max-width: 768px) {
+        .top-navbar {
+          padding: 4px 12px;
+          min-height: 28px;
+        }
+
+        .top-navbar__logo {
+          height: 40px;
+        }
+
+        .top-navbar__content {
+          font-size: 1rem;
+        }
+
+        .top-navbar__info i {
+          font-size: 1.125rem;
+        }
+
+        .top-navbar__links i {
+          font-size: 1.25rem;
+        }
+
+        .top-navbar__right {
+          gap: 12px;
+        }
+
+        .top-navbar__info {
+          gap: 12px;
+        }
+
+        .top-navbar__links {
+          gap: 12px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .top-navbar {
+          padding: 4px 8px;
+          min-height: 28px;
+        }
+
+        .top-navbar__logo {
+          height: 36px;
+        }
+
+        .top-navbar__content {
+          font-size: 0.95rem;
+        }
+
+        .top-navbar__right {
+          gap: 8px;
+        }
+
+        .top-navbar__info {
+          gap: 8px;
+        }
+
+        .top-navbar__info span {
+          font-size: 0.95rem;
+        }
+
+        .top-navbar__info i {
+          font-size: 1.125rem;
+        }
+
+        .top-navbar__links {
+          gap: 8px;
+        }
+
+        .top-navbar__links a {
+          font-size: 0.95rem;
+        }
+
+        .top-navbar__links i {
+          font-size: 1.25rem;
+        }
+
+        .top-navbar__links a span {
+          display: none;
+        }
+
+        .carousel-nav {
+          top: 28px;
+          padding: 12px clamp(12px, 3vw, 16px);
+        }
+
+        .carousel-nav ul {
+          flex-wrap: nowrap;
+          gap: 8px;
+          font-size: 0.875rem;
+        }
+
+        .carousel-nav__whatsapp {
+          font-size: 2.25rem;
+        }
+      }
+
+      /* Footer */
+      footer {
+        position: relative;
+        background: #000;
+        padding: 16px;
+        color: #fff;
+        font-size: 0.875rem;
+        z-index: 2;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        padding: 0 16px;
+        text-align: center;
+        position: relative;
+      }
+
+      .footer-producer {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-top: 8px;
+      }
+
+      .footer-producer img {
+        height: 24px;
+        border-radius: 4px;
+      }
+
+      @media (min-width: 640px) {
+        footer {
+          font-size: 1rem;
+        }
+
+        .footer-container {
+          flex-direction: row;
+          gap: 4px;
+        }
+
+        .footer-producer {
+          margin-top: 0;
+        }
+
+        .footer-producer img {
+          height: 32px;
+        }
+      }
+
+      /* Seção de Contato */
+      .contact-section {
+        position: relative;
+        width: 100%;
+        background: #1f2937;
+        padding: 16px 16px 24px 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 2;
+        transform: translateY(0);
+      }
+
+      .contact-section h2 {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        font-weight: 800;
+        color: #fff;
+        margin-top: 0;
+        margin-bottom: 8px;
+        text-align: center;
+      }
+
+      .contact-section .contact-info {
+        font-size: clamp(1rem, 2.5vw, 1.875rem);
+        color: #d1d5db;
+        margin-bottom: 12px;
+        text-align: center;
+        line-height: 1.6;
+      }
+
+      .contact-section h3 {
+        font-size: clamp(1.125rem, 2vw, 1.5rem);
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 12px;
+        text-align: center;
+      }
+
+      .contact-social {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .contact-social a {
+        color: #10b981;
+        transition: color 0.3s ease;
+        text-decoration: none;
+        font-size: 4rem;
+      }
+
+      .contact-social a:hover {
+        color: #34d399;
+      }
+
+      .contact-social a.instagram {
+        color: #ec4899;
+      }
+
+      .contact-social a.instagram:hover {
+        color: #f472b6;
+      }
+
+      .contact-social a.youtube {
+        color: #ef4444;
+      }
+
+      .contact-social a.youtube:hover {
+        color: #f87171;
+      }
+
+      .contact-social a.facebook {
+        color: #1877f2;
+      }
+
+      .contact-social a.facebook:hover {
+        color: #42a5f5;
+      }
+
+      .contact-social a.email {
+        color: #ea4335;
+      }
+
+      .contact-social a.email:hover {
+        color: #f56565;
+      }
+
+      @media (max-width: 640px) {
+        .contact-section {
+          padding: 12px 16px 20px 16px;
+        }
+
+        .contact-section h2 {
+          margin-bottom: 6px;
+        }
+
+        .contact-section .contact-info {
+          margin-bottom: 8px;
+        }
+
+        .contact-section h3 {
+          margin-bottom: 8px;
+        }
+
+        .contact-social {
+          gap: 16px;
+        }
+
+        .contact-social a {
+          font-size: 3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar fina e escura no topo - apenas informações de contato e redes sociais -->
+    <nav class="top-navbar" aria-label="Informações de contato">
+      <div class="top-navbar__content">
+        <img src="imagens/logo.png" alt="Logo Mary Corretora" class="top-navbar__logo" />
+        <div class="top-navbar__right">
+          <div class="top-navbar__info">
+            <span>
+              <i class="fas fa-phone"></i>
+              <span>(13) 99664-4884</span>
+            </span>
+          </div>
+          <div class="top-navbar__links">
+            <a href="https://wa.me/5513996644884" target="_blank" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+              <span>WhatsApp</span>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+              <i class="fab fa-facebook"></i>
+              <span>Facebook</span>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Links de navegação diretamente sobre o carrossel -->
+    <nav class="carousel-nav" aria-label="Menu principal">
+      <ul>
+        <li><a href="javascript:void(0)" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Home</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a href="https://wa.me/5513996644884" target="_blank" class="carousel-nav__whatsapp" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </nav>
+
+    <section id="home" class="hero-slider" aria-label="Galeria principal">
+      <div class="swiper hero-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" style="background-image: url('imagens/capa.png')">
+            <div class="slide-content">
+              <div class="slide-stack">
+                <img src="imagens/logo.png" alt="Logo Mary Corretora" style="width: clamp(360px, 65vw, 600px); height: auto;" />
+                <div class="logo-legend">
+                  <p class="logo-caption-name">Mary Corretora</p>
+                  <p class="logo-caption-role">Corretora de Imóveis · Creci 168182</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide" style="background-image: url('imagens/capa2.png')">
+            <div class="slide-content">
+              <div class="slide-stack">
+                <img src="imagens/logo.png" alt="Logo Mary Corretora" style="width: clamp(360px, 65vw, 600px); height: auto;" />
+                <div class="logo-legend">
+                  <p class="logo-caption-name">Mary Corretora</p>
+                  <p class="logo-caption-role">Corretora de Imóveis · Creci 168182</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide" style="background-image: url('imagens/capa3.png')">
+            <div class="slide-content">
+              <div class="slide-stack">
+                <img src="imagens/logo.png" alt="Logo Mary Corretora" style="width: clamp(360px, 65vw, 600px); height: auto;" />
+                <div class="logo-legend">
+                  <p class="logo-caption-name">Mary Corretora</p>
+                  <p class="logo-caption-role">Corretora de Imóveis · Creci 168182</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide" style="background-image: url('imagens/capa4.png')">
+            <div class="slide-content">
+              <div class="slide-stack">
+                <img src="imagens/logo.png" alt="Logo Mary Corretora" style="width: clamp(360px, 65vw, 600px); height: auto;" />
+                <div class="logo-legend">
+                  <p class="logo-caption-name">Mary Corretora</p>
+                  <p class="logo-caption-role">Corretora de Imóveis · Creci 168182</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide" style="background-image: url('imagens/capa5.png')">
+            <div class="slide-content">
+              <div class="slide-stack">
+                <img src="imagens/logo.png" alt="Logo Mary Corretora" style="width: clamp(360px, 65vw, 600px); height: auto;" />
+                <div class="logo-legend">
+                  <p class="logo-caption-name">Mary Corretora</p>
+                  <p class="logo-caption-role">Corretora de Imóveis · Creci 168182</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+        <button
+          class="nav-btn nav-btn--prev"
+          type="button"
+          aria-label="Imagem anterior"
+        >
+          &#10094;
+        </button>
+        <button
+          class="nav-btn nav-btn--next"
+          type="button"
+          aria-label="Próxima imagem"
+        >
+          &#10095;
+        </button>
+      </div>
+    </section>
+
+    <section id="galeria" class="gallery-section">
+      <div class="gallery-intro">
+        <h2 class="gallery-title">Imóveis Exclusivos Para Sua Comodidade e Bem Estar</h2>
+        <p class="gallery-subtitle">
+          Aqui você encontra opções cuidadosamente escolhidas que unem localização, conforto e qualidade. Encontre o imóvel ideal para você.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <article class="property-card">
+          <a href="imoveis.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="property-media">
+              <img src="imagens/galeria/card1/1.png" alt="Cozinha integrada no Jardins do Forte" />
+              <span class="property-badge property-badge--green">Canto do Forte</span>
+            </div>
+            <div class="property-content">
+            <div>
+              <p class="property-location">Praia Grande · Canto do Forte</p>
+              <h3 class="property-title">Apto de 1 dorm, Sala, Cozinha, Wc, Área de Serviço, 01 quadra e meia da praia.</h3>
+              <p class="property-title" style="font-weight:500; margin-top:4px;">
+                Cond: R$ 573,44 · Iptu: R$ 225,74
+              </p>
+            </div>
+            <div class="property-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M7 10a5 5 0 0 1 10 0v6.5" />
+                  <path d="M5 16.5h14" />
+                  <path d="M8 21h1.5" />
+                  <path d="M14.5 21H16" />
+                </svg>
+                0 suítes
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 12h16l-2-5.5A2 2 0 0 0 16.15 5H7.85A2 2 0 0 0 6 6.5Z" />
+                  <path d="M2 12h20" />
+                  <path d="M5 12v4.5A1.5 1.5 0 0 0 6.5 18h0A1.5 1.5 0 0 0 8 16.5V12" />
+                  <path d="M16 12v4.5A1.5 1.5 0 0 0 17.5 18h0A1.5 1.5 0 0 0 19 16.5V12" />
+                </svg>
+                1 vaga
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 4h16v16H4z" />
+                  <path d="M4 12h16M12 4v16" />
+                </svg>
+                45 m²
+              </span>
+            </div>
+            <p class="property-price">Valor: R$ 290.000,00</p>
+          </div>
+          </a>
+        </article>
+
+        <article class="property-card">
+          <a href="imoveis.html#imovel2" style="text-decoration: none; color: inherit; display: block;">
+            <div class="property-media">
+              <img src="imagens/galeria/card2/1.png" alt="Varanda com vista lateral para o mar" />
+              <span class="property-badge">Canto do Forte</span>
+            </div>
+            <div class="property-content">
+            <div>
+              <p class="property-location">Praia Grande · Canto do Forte</p>
+              <h3 class="property-title">Apto 1 dorm, Sala, Cozinha, Wc, Área de Serviço.</h3>
+              <p class="property-title" style="font-weight:500; margin-top:4px;">
+                Todo reformado:
+              </p>
+              <p class="property-title" style="font-weight:500; margin-top:4px;">
+                Cond: R$ 353,00 · Iptu: R$ 129,00
+              </p>
+            </div>
+            <div class="property-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M7 10a5 5 0 0 1 10 0v6.5" />
+                  <path d="M5 16.5h14" />
+                  <path d="M8 21h1.5" />
+                  <path d="M14.5 21H16" />
+                </svg>
+                0 suítes
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 12h16l-2-5.5A2 2 0 0 0 16.15 5H7.85A2 2 0 0 0 6 6.5Z" />
+                  <path d="M2 12h20" />
+                  <path d="M5 12v4.5A1.5 1.5 0 0 0 6.5 18h0A1.5 1.5 0 0 0 8 16.5V12" />
+                  <path d="M16 12v4.5A1.5 1.5 0 0 0 17.5 18h0A1.5 1.5 0 0 0 19 16.5V12" />
+                </svg>
+                1 vaga
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 4h16v16H4z" />
+                  <path d="M4 12h16M12 4v16" />
+                </svg>
+                40 m²
+              </span>
+            </div>
+            <p class="property-price">Valor: R$ 270.000,00</p>
+          </div>
+          </a>
+        </article>
+
+        <article class="property-card">
+          <a href="imoveis.html#imovel3" style="text-decoration: none; color: inherit; display: block;">
+            <div class="property-media">
+              <img src="imagens/galeria/card3/1.png" alt="Varanda gourmet com vista para o mar em Mirim" />
+              <span class="property-badge">Canto do Forte</span>
+            </div>
+            <div class="property-content">
+            <div>
+              <p class="property-location">Praia Grande · Canto do Forte</p>
+              <h3 class="property-title">Apto 1 dorm, Sala, Cozinha, Wc, Área de Serviço, Sacada, 5 quadras da praia.</h3>
+              <p class="property-title" style="font-weight:500; margin-top:4px;">
+                Lazer completo/Área Nobre
+              </p>
+              <p class="property-title" style="font-weight:500; margin-top:4px;">
+                Cond: R$ 632,33 · Iptu: R$ 225,74
+              </p>
+            </div>
+            <div class="property-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M7 10a5 5 0 0 1 10 0v6.5" />
+                  <path d="M5 16.5h14" />
+                  <path d="M8 21h1.5" />
+                  <path d="M14.5 21H16" />
+                </svg>
+                0 suítes
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 12h16l-2-5.5A2 2 0 0 0 16.15 5H7.85A2 2 0 0 0 6 6.5Z" />
+                  <path d="M2 12h20" />
+                  <path d="M5 12v4.5A1.5 1.5 0 0 0 6.5 18h0A1.5 1.5 0 0 0 8 16.5V12" />
+                  <path d="M16 12v4.5A1.5 1.5 0 0 0 17.5 18h0A1.5 1.5 0 0 0 19 16.5V12" />
+                </svg>
+                2 vagas
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 4h16v16H4z" />
+                  <path d="M4 12h16M12 4v16" />
+                </svg>
+                69 m²
+              </span>
+            </div>
+            <p class="property-price">Valor: R$ 390.000,00</p>
+          </div>
+          </a>
+        </article>
+
+        <article class="property-card">
+          <div class="property-media">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop" alt="Apartamento com vista para o mar em Caiçara" />
+            <span class="property-badge property-badge--green">Caiçara</span>
+          </div>
+          <div class="property-content">
+            <div>
+              <p class="property-location">Praia Grande · Caiçara</p>
+              <h3 class="property-title">Apto 3 dorms, Sala, Cozinha, 3 Wcs, Área de Serviço, Sacada, Frente mar.</h3>
+              <p class="property-title" style="font-weight:500; margin-top:4px;">
+                Lazer completo com piscina e academia:
+              </p>
+              <p class="property-title" style="font-weight:500; margin-top:4px;">
+                Cond: R$ 1.250,00 · Iptu: R$ 580,00
+              </p>
+            </div>
+            <div class="property-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M7 10a5 5 0 0 1 10 0v6.5" />
+                  <path d="M5 16.5h14" />
+                  <path d="M8 21h1.5" />
+                  <path d="M14.5 21H16" />
+                </svg>
+                3 suítes
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 12h16l-2-5.5A2 2 0 0 0 16.15 5H7.85A2 2 0 0 0 6 6.5Z" />
+                  <path d="M2 12h20" />
+                  <path d="M5 12v4.5A1.5 1.5 0 0 0 6.5 18h0A1.5 1.5 0 0 0 8 16.5V12" />
+                  <path d="M16 12v4.5A1.5 1.5 0 0 0 17.5 18h0A1.5 1.5 0 0 0 19 16.5V12" />
+                </svg>
+                3 vagas
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 4h16v16H4z" />
+                  <path d="M4 12h16M12 4v16" />
+                </svg>
+                142 m²
+              </span>
+            </div>
+            <p class="property-price">Valor: R$ 1.290.000,00</p>
+          </div>
+        </article>
+
+        <article class="property-card">
+          <div class="property-media">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop" alt="Sala integrada com vista para o mar no Boqueirão" />
+            <span class="property-badge">Boqueirão</span>
+          </div>
+          <div class="property-content">
+            <div>
+              <p class="property-location">Praia Grande · Boqueirão</p>
+              <h3 class="property-title">Apto 2 dorms, Sala, Cozinha, Wc, Área de Serviço, Sacada, 2 quadras da praia.</h3>
+              <p class="property-title" style="font-weight:500; margin-top:4px;">
+                Vista mar:
+              </p>
+              <p class="property-title" style="font-weight:500; margin-top:4px;">
+                Cond: R$ 480,00 · Iptu: R$ 195,00
+              </p>
+            </div>
+            <div class="property-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M7 10a5 5 0 0 1 10 0v6.5" />
+                  <path d="M5 16.5h14" />
+                  <path d="M8 21h1.5" />
+                  <path d="M14.5 21H16" />
+                </svg>
+                2 dorms
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 12h16l-2-5.5A2 2 0 0 0 16.15 5H7.85A2 2 0 0 0 6 6.5Z" />
+                  <path d="M2 12h20" />
+                  <path d="M5 12v4.5A1.5 1.5 0 0 0 6.5 18h0A1.5 1.5 0 0 0 8 16.5V12" />
+                  <path d="M16 12v4.5A1.5 1.5 0 0 0 17.5 18h0A1.5 1.5 0 0 0 19 16.5V12" />
+                </svg>
+                1 vaga
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 4h16v16H4z" />
+                  <path d="M4 12h16M12 4v16" />
+                </svg>
+                78 m²
+              </span>
+            </div>
+            <p class="property-price">Valor: R$ 620.000,00</p>
+          </div>
+        </article>
+
+        <article class="property-card">
+          <div class="property-media">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop" alt="Varanda gourmet com vista para o mar no Boqueirão" />
+            <span class="property-badge">Boqueirão</span>
+          </div>
+          <div class="property-content">
+            <div>
+              <p class="property-location">Praia Grande · Boqueirão</p>
+              <h3 class="property-title">Apto 3 dorms, Sala, Cozinha, 3 Wcs, Área de Serviço, Sacada Gourmet, Vista mar.</h3>
+              <p class="property-title" style="font-weight:500; margin-top:4px;">
+                Lazer completo com piscina e churrasqueira:
+              </p>
+              <p class="property-title" style="font-weight:500; margin-top:4px;">
+                Cond: R$ 920,00 · Iptu: R$ 420,00
+              </p>
+            </div>
+            <div class="property-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M7 10a5 5 0 0 1 10 0v6.5" />
+                  <path d="M5 16.5h14" />
+                  <path d="M8 21h1.5" />
+                  <path d="M14.5 21H16" />
+                </svg>
+                3 suítes
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 12h16l-2-5.5A2 2 0 0 0 16.15 5H7.85A2 2 0 0 0 6 6.5Z" />
+                  <path d="M2 12h20" />
+                  <path d="M5 12v4.5A1.5 1.5 0 0 0 6.5 18h0A1.5 1.5 0 0 0 8 16.5V12" />
+                  <path d="M16 12v4.5A1.5 1.5 0 0 0 17.5 18h0A1.5 1.5 0 0 0 19 16.5V12" />
+                </svg>
+                2 vagas
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 4h16v16H4z" />
+                  <path d="M4 12h16M12 4v16" />
+                </svg>
+                128 m²
+              </span>
+            </div>
+            <p class="property-price">Valor: R$ 980.000,00</p>
+          </div>
+        </article>
+
+        <article class="property-card">
+          <div class="property-media">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop" alt="Apartamento moderno com varanda em Praia Grande" />
+            <span class="property-badge">Ocian</span>
+          </div>
+          <div class="property-content">
+            <div>
+              <p class="property-location">Praia Grande · Ocian</p>
+              <h3 class="property-title">Apto 2 dorms, Sala, Cozinha, 2 Wcs, Área de Serviço, Varanda, 3 quadras da praia.</h3>
+              <p class="property-title" style="font-weight:500; margin-top:4px;">
+                Moderno e bem localizado:
+              </p>
+              <p class="property-title" style="font-weight:500; margin-top:4px;">
+                Cond: R$ 520,00 · Iptu: R$ 280,00
+              </p>
+            </div>
+            <div class="property-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M7 10a5 5 0 0 1 10 0v6.5" />
+                  <path d="M5 16.5h14" />
+                  <path d="M8 21h1.5" />
+                  <path d="M14.5 21H16" />
+                </svg>
+                2 dorms
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 12h16l-2-5.5A2 2 0 0 0 16.15 5H7.85A2 2 0 0 0 6 6.5Z" />
+                  <path d="M2 12h20" />
+                  <path d="M5 12v4.5A1.5 1.5 0 0 0 6.5 18h0A1.5 1.5 0 0 0 8 16.5V12" />
+                  <path d="M16 12v4.5A1.5 1.5 0 0 0 17.5 18h0A1.5 1.5 0 0 0 19 16.5V12" />
+                </svg>
+                1 vaga
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 4h16v16H4z" />
+                  <path d="M4 12h16M12 4v16" />
+                </svg>
+                68 m²
+              </span>
+            </div>
+            <p class="property-price">Valor: R$ 450.000,00</p>
+          </div>
+        </article>
+
+        <article class="property-card">
+          <div class="property-media">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&h=600&fit=crop" alt="Apartamento de luxo com vista para o mar em Praia Grande" />
+            <span class="property-badge property-badge--green">Tupi</span>
+          </div>
+          <div class="property-content">
+            <div>
+              <p class="property-location">Praia Grande · Tupi</p>
+              <h3 class="property-title">Apto 3 dorms, Sala, Cozinha, 3 Wcs, Área de Serviço, Varanda Gourmet, Frente mar.</h3>
+              <p class="property-title" style="font-weight:500; margin-top:4px;">
+                Luxo e sofisticação:
+              </p>
+              <p class="property-title" style="font-weight:500; margin-top:4px;">
+                Cond: R$ 1.150,00 · Iptu: R$ 650,00
+              </p>
+            </div>
+            <div class="property-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M7 10a5 5 0 0 1 10 0v6.5" />
+                  <path d="M5 16.5h14" />
+                  <path d="M8 21h1.5" />
+                  <path d="M14.5 21H16" />
+                </svg>
+                3 suítes
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 12h16l-2-5.5A2 2 0 0 0 16.15 5H7.85A2 2 0 0 0 6 6.5Z" />
+                  <path d="M2 12h20" />
+                  <path d="M5 12v4.5A1.5 1.5 0 0 0 6.5 18h0A1.5 1.5 0 0 0 8 16.5V12" />
+                  <path d="M16 12v4.5A1.5 1.5 0 0 0 17.5 18h0A1.5 1.5 0 0 0 19 16.5V12" />
+                </svg>
+                2 vagas
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M4 4h16v16H4z" />
+                  <path d="M4 12h16M12 4v16" />
+                </svg>
+                155 m²
+              </span>
+            </div>
+            <p class="property-price">Valor: R$ 1.650.000,00</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contato" class="contact-section">
+      <h2>Entre em Contato com a Mary Corretora</h2>
+      <p class="contact-info">
+        Telefone: (13) 99664-4884<br>
+        Email: marycorretora@gmail.com
+
+      </p>
+      <h3>Nos Chame no WhatsApp e nos siga nas Redes Sociais:</h3>
+      <div class="contact-social">
+        <a href="https://wa.me/5513996644884" target="_blank" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="mailto:marycorretora@gmail.com" aria-label="Email" class="email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://www.facebook.com" target="_blank" class="facebook" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" class="instagram" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </section>
+    <!-- Fim da Seção de Contato -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".hero-swiper", {
+        effect: "fade",
+        loop: true,
+        speed: 900,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".nav-btn--next",
+          prevEl: ".nav-btn--prev",
+        },
+      });
+
+      // Atualizar ano atual no footer
+      document.getElementById('ano-atual').textContent = new Date().getFullYear();
+
+      // Ajustar posição dos links sobre o carrossel e do carrossel baseado na altura da navbar fina
+      function adjustNavbarPosition() {
+        const topNavbar = document.querySelector('.top-navbar');
+        const carouselNav = document.querySelector('.carousel-nav');
+        const heroSlider = document.querySelector('.hero-slider');
+        
+        if (topNavbar) {
+          const topNavbarHeight = topNavbar.offsetHeight;
+          
+          // Ajustar links sobre o carrossel
+          if (carouselNav) {
+            carouselNav.style.top = `${topNavbarHeight}px`;
+          }
+          
+          // Ajustar carrossel para começar logo abaixo da navbar fina, sem espaço
+          if (heroSlider) {
+            heroSlider.style.top = `${topNavbarHeight}px`;
+            heroSlider.style.height = `calc(100vh - ${topNavbarHeight}px)`;
+            heroSlider.style.marginTop = '0';
+            heroSlider.style.paddingTop = '0';
+          }
+        }
+      }
+
+      // Ajustar na carga, após DOM carregado e no resize
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', adjustNavbarPosition);
+      } else {
+        adjustNavbarPosition();
+      }
+      window.addEventListener('resize', adjustNavbarPosition);
+      
+      // Ajustar também após um pequeno delay para garantir que todos os elementos foram renderizados
+      setTimeout(adjustNavbarPosition, 100);
+
+      // Efeito Parallax - Seções sobem sobre a home
+      const heroSlider = document.querySelector('.hero-slider');
+      const gallerySection = document.querySelector('.gallery-section');
+      const contactSection = document.querySelector('.contact-section');
+      const footer = document.querySelector('footer');
+
+      function updateParallax() {
+        const scrolled = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const topNavbar = document.querySelector('.top-navbar');
+        const navbarOffset = topNavbar ? topNavbar.offsetHeight : 0;
+
+        // A home move-se mais lentamente (efeito parallax inverso)
+        // Considera o offset das navbars
+        if (heroSlider) {
+          const adjustedScroll = Math.max(0, scrolled - navbarOffset);
+          heroSlider.style.transform = `translateY(${adjustedScroll * 0.5}px)`;
+        }
+
+        // As seções sobem sobre a home com efeito parallax
+        if (gallerySection) {
+          const galleryTop = gallerySection.getBoundingClientRect().top + scrolled;
+          const parallaxSpeed = 0.6;
+          const adjustedWindowHeight = windowHeight - navbarOffset;
+          const offset = (scrolled - (galleryTop - adjustedWindowHeight)) * parallaxSpeed;
+          
+          if (scrolled > adjustedWindowHeight * 0.8) {
+            gallerySection.style.transform = `translateY(${Math.max(0, offset)}px)`;
+          } else {
+            gallerySection.style.transform = 'translateY(0)';
+          }
+        }
+
+        if (contactSection) {
+          const contactTop = contactSection.getBoundingClientRect().top + scrolled;
+          const parallaxSpeed = 0.5;
+          const galleryEnd = gallerySection ? gallerySection.offsetTop + gallerySection.offsetHeight : windowHeight;
+          const offset = (scrolled - galleryEnd) * parallaxSpeed;
+          
+          if (scrolled > galleryEnd) {
+            contactSection.style.transform = `translateY(${Math.max(0, offset)}px)`;
+          } else {
+            contactSection.style.transform = 'translateY(0)';
+          }
+        }
+
+        if (footer) {
+          const footerTop = footer.getBoundingClientRect().top + scrolled;
+          const parallaxSpeed = 0.4;
+          const contactEnd = contactSection ? contactSection.offsetTop + contactSection.offsetHeight : windowHeight * 2;
+          const offset = (scrolled - contactEnd) * parallaxSpeed;
+          
+          if (scrolled > contactEnd) {
+            footer.style.transform = `translateY(${Math.max(0, offset)}px)`;
+          } else {
+            footer.style.transform = 'translateY(0)';
+          }
+        }
+      }
+
+      // Aplicar parallax no scroll com otimização
+      let ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          window.requestAnimationFrame(function() {
+            updateParallax();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+
+      // Aplicar parallax inicial
+      updateParallax();
+
+      // Listener específico para o link Home - sempre vai para o topo
+      document.querySelectorAll('a[data-scroll-top="true"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+          return false;
+        }, true);
+      });
+
+      // Scroll suave para os outros links de navegação
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        // Pular links com data-scroll-top
+        if (anchor.getAttribute('data-scroll-top') === 'true') return;
+        
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href === '#') return;
+          
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Para outros links, procura o elemento de destino
+          const target = document.querySelector(href);
+          
+          if (target) {
+            const topNavbarHeight = document.querySelector('.top-navbar')?.offsetHeight || 0;
+            const targetPosition = target.offsetTop - topNavbarHeight;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+          
+          return false;
+        }, false);
+      });
+    </script>
+
+    <!-- Footer padrão -->
+    <footer>
+      <div class="footer-container">
+        <span>&copy; <span id="ano-atual"></span> Mary Corretora. Todos os direitos reservados.</span>
+        <div class="footer-producer">
+          <span>Produzido por:</span>
+          <img src="imagens/footerj3.png" alt="Logo J3 Digital Mídia" />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
