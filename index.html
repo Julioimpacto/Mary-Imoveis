@@ -869,6 +869,36 @@
         line-height: 1.5;
         margin: 0;
       }
+
+      /* Botão WhatsApp fixo na parte de baixo da Home */
+      .whatsapp-fixed {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 25;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 20px;
+        background: #25d366;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        border-radius: 50px;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+        transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .whatsapp-fixed:hover {
+        background: #128c7e;
+        transform: scale(1.05);
+        box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6);
+      }
+
+      .whatsapp-fixed i {
+        font-size: 1.5rem;
+      }
     </style>
   </head>
   <body>
@@ -1410,7 +1440,7 @@
           </a>
         </article>
         <article class="ad-card">
-          <a href="https://www.instagram.com/rc.servicoserefrigeracao/" target="_blank" rel="noopener noreferrer" aria-label="RC Serviços no Instagram">
+          <a href="rcservicos.html" aria-label="Página da RC Serviços de Refrigeração">
             <div class="ad-card__media">
               <img src="imagens/publicidade/rcservicos.png" alt="RC Serviços" />
             </div>
@@ -1553,6 +1583,12 @@
       });
     </script>
 
+    <!-- Botão WhatsApp fixo -->
+    <a href="https://wa.me/5513996644884" target="_blank" rel="noopener noreferrer" class="whatsapp-fixed" aria-label="Converse conosco no WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+      <span>Converse Conosco</span>
+    </a>
+
     <!-- Footer padrão -->
     <footer>
       <div class="footer-container">
@@ -1565,6 +1601,7 @@
     </footer>
   </body>
 </html>
+
 
 
 
