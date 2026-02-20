@@ -117,6 +117,29 @@
         padding: 0 clamp(16px, 5vw, 48px);
       }
 
+      /* Número do card na página de imóveis */
+      .property-card-section {
+        position: relative;
+      }
+
+      .property-section-number {
+        position: absolute;
+        top: 16px;
+        right: clamp(16px, 5vw, 48px);
+        width: 40px;
+        height: 40px;
+        background: #1d4ed8;
+        color: #fff;
+        font-size: 1.25rem;
+        font-weight: 700;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+        box-shadow: 0 2px 8px rgba(29, 78, 216, 0.4);
+      }
+
       /* Breadcrumbs */
       .breadcrumbs {
         padding: 24px 0 16px;
@@ -630,6 +653,9 @@
 
     <!-- Container principal -->
     <div class="container">
+      <!-- Primeiro Imóvel -->
+      <section id="imovel1" class="property-card-section">
+      <span class="property-section-number" aria-hidden="true">1</span>
       <!-- Breadcrumbs -->
       <nav class="breadcrumbs" aria-label="Navegação estrutural">
         <a href="index.html">Home</a>
@@ -775,12 +801,14 @@
         </div>
 
       </section>
+      </section>
 
       <!-- Separador entre imóveis -->
       <div style="height: 32px; border-bottom: 4px solid #94a3b8; margin: 24px 0;"></div>
 
       <!-- Segundo Imóvel -->
-      <section id="imovel2">
+      <section id="imovel2" class="property-card-section">
+      <span class="property-section-number" aria-hidden="true">2</span>
       <!-- Breadcrumbs -->
       <nav class="breadcrumbs" aria-label="Navegação estrutural">
         <a href="index.html">Home</a>
@@ -932,7 +960,8 @@
       <div style="height: 32px; border-bottom: 4px solid #94a3b8; margin: 24px 0;"></div>
 
       <!-- Terceiro Imóvel -->
-      <section id="imovel3">
+      <section id="imovel3" class="property-card-section">
+      <span class="property-section-number" aria-hidden="true">3</span>
       <!-- Breadcrumbs -->
       <nav class="breadcrumbs" aria-label="Navegação estrutural">
         <a href="index.html">Home</a>
@@ -1083,160 +1112,9 @@
       <!-- Separador entre imóveis -->
       <div style="height: 32px; border-bottom: 4px solid #94a3b8; margin: 24px 0;"></div>
 
-      <!-- Quarto Imóvel -->
-      <section id="imovel4">
-      <!-- Breadcrumbs -->
-      <nav class="breadcrumbs" aria-label="Navegação estrutural">
-        <a href="index.html">Home</a>
-        <span>></span>
-        <a href="index.html#galeria">Imóveis</a>
-        <span>></span>
-        <a href="index.html#galeria">À venda</a>
-        <span>></span>
-        <a href="index.html#galeria">Apartamento</a>
-        <span>></span>
-        <a href="index.html#galeria">Praia Grande</a>
-        <span>></span>
-        <a href="index.html#galeria">Caiçara</a>
-        <span>></span>
-        <span>Apto de 3 dormitórios à venda, 142m²</span>
-      </nav>
-
-      <!-- Título e preço -->
-      <div class="property-header">
-        <div class="property-title-section">
-          <h1 class="property-title">
-            Apto de 3 dormitórios à venda, 142m² – Caiçara – Praia Grande/SP – R$ 1.290.000,00
-          </h1>
-        </div>
-        <div class="property-header-right">
-          <button class="share-button" aria-label="Compartilhar" onclick="shareProperty4()">
-            <i class="fas fa-share-alt"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Galeria de imagens -->
-      <section class="gallery-section">
-        <div class="gallery-grid">
-          <div class="gallery-item gallery-item--large" onclick="openGallery4(0)">
-            <img src="imagens/galeria/card4/1.png" alt="Imagem 1 do imóvel" />
-          </div>
-          <div class="gallery-item" onclick="openGallery4(1)">
-            <img src="imagens/galeria/card4/2.png" alt="Imagem 2 do imóvel" />
-          </div>
-          <div class="gallery-item" onclick="openGallery4(2)">
-            <img src="imagens/galeria/card4/3.png" alt="Imagem 3 do imóvel" />
-          </div>
-          <div class="gallery-item" onclick="openGallery4(3)">
-            <img src="imagens/galeria/card4/4.png" alt="Imagem 4 do imóvel" />
-          </div>
-          <div class="gallery-item" onclick="openGallery4(4)">
-            <img src="imagens/galeria/card4/5.png" alt="Imagem 5 do imóvel" />
-          </div>
-          <div class="gallery-item" onclick="openGallery4(5)">
-            <img src="imagens/galeria/card4/6.png" alt="Imagem 6 do imóvel" />
-          </div>
-          <div class="gallery-item" onclick="openGallery4(6)">
-            <img src="imagens/galeria/card4/7.png" alt="Imagem 7 do imóvel" />
-          </div>
-          <div class="gallery-item" onclick="openGallery4(7)">
-            <img src="imagens/galeria/card4/8.png" alt="Imagem 8 do imóvel" />
-          </div>
-          <div class="gallery-item" onclick="openGallery4(8)">
-            <img src="imagens/galeria/card4/9.png" alt="Imagem 9 do imóvel" />
-          </div>
-        </div>
-      </section>
-
-      <!-- Informações do imóvel -->
-      <section class="property-info">
-        <div class="info-section">
-          <h2 class="info-title">Características do Imóvel</h2>
-          <div class="info-grid">
-            <div class="info-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M3 9v12h18V9" />
-                <path d="M3 9c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2" />
-                <path d="M3 13h18" />
-                <path d="M7 5v4" />
-                <path d="M17 5v4" />
-              </svg>
-              <div class="info-item-content">
-                <span class="info-item-label">Dormitórios</span>
-                <span class="info-item-value">3</span>
-              </div>
-            </div>
-            <div class="info-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M4 12h16l-2-5.5A2 2 0 0 0 16.15 5H7.85A2 2 0 0 0 6 6.5Z" />
-                <path d="M2 12h20" />
-                <path d="M5 12v4.5A1.5 1.5 0 0 0 6.5 18h0A1.5 1.5 0 0 0 8 16.5V12" />
-                <path d="M16 12v4.5A1.5 1.5 0 0 0 17.5 18h0A1.5 1.5 0 0 0 19 16.5V12" />
-              </svg>
-              <div class="info-item-content">
-                <span class="info-item-label">Vagas</span>
-                <span class="info-item-value">3 vagas</span>
-              </div>
-            </div>
-            <div class="info-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M4 4h16v16H4z" />
-                <path d="M4 12h16M12 4v16" />
-              </svg>
-              <div class="info-item-content">
-                <span class="info-item-label">Área Total</span>
-                <span class="info-item-value">142 m²</span>
-              </div>
-            </div>
-            <div class="info-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M7 10a5 5 0 0 1 10 0v6.5" />
-                <path d="M5 16.5h14" />
-                <path d="M8 21h1.5" />
-                <path d="M14.5 21H16" />
-              </svg>
-              <div class="info-item-content">
-                <span class="info-item-label">Suítes</span>
-                <span class="info-item-value">3 suítes</span>
-              </div>
-            </div>
-            <div class="info-item">
-              <div class="info-item-content">
-                <span class="info-item-label">Condomínio</span>
-                <span class="info-item-value">R$ 1.250,00</span>
-              </div>
-            </div>
-            <div class="info-item">
-              <div class="info-item-content">
-                <span class="info-item-label">IPTU</span>
-                <span class="info-item-value">R$ 580,00</span>
-              </div>
-            </div>
-            <div class="info-item">
-              <div class="info-item-content">
-                <span class="info-item-label">Valor do Imóvel</span>
-                <span class="info-item-value">R$ 1.290.000,00</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="info-section">
-          <h2 class="info-title">Descrição</h2>
-          <p class="info-description">
-            Apartamento de 3 dormitórios (3 suítes) com 142 m² à venda no Caiçara, Praia Grande/SP. Imóvel com sala, cozinha, 3 banheiros, área de serviço, sacada e frente para o mar. Lazer completo com piscina e academia. Condomínio R$ 1.250,00 e IPTU R$ 580,00. Valor: R$ 1.290.000,00.
-          </p>
-        </div>
-
-      </section>
-      </section>
-
-      <!-- Separador entre imóveis -->
-      <div style="height: 32px; border-bottom: 4px solid #94a3b8; margin: 24px 0;"></div>
-
-      <!-- Quinto Imóvel -->
-      <section id="imovel5">
+      <!-- Quarto Imóvel (conteúdo Itararé – alinhado ao card 4 da index) -->
+      <section id="imovel4" class="property-card-section">
+      <span class="property-section-number" aria-hidden="true">4</span>
       <!-- Breadcrumbs -->
       <nav class="breadcrumbs" aria-label="Navegação estrutural">
         <a href="index.html">Home</a>
@@ -1262,13 +1140,13 @@
           </h1>
         </div>
         <div class="property-header-right">
-          <button class="share-button" aria-label="Compartilhar" onclick="shareProperty5()">
+          <button class="share-button" aria-label="Compartilhar" onclick="shareProperty4()">
             <i class="fas fa-share-alt"></i>
           </button>
         </div>
       </div>
 
-      <!-- Galeria de imagens -->
+      <!-- Galeria de imagens (card5 – Itararé) -->
       <section class="gallery-section">
         <div class="gallery-grid">
           <div class="gallery-item gallery-item--large" onclick="openGallery5(0)">
@@ -1378,6 +1256,146 @@
           <h2 class="info-title">Descrição</h2>
           <p class="info-description">
             Apartamento de 2 dormitórios à venda, 49 m² no Itararé, São Vicente/SP. Quarto, sala, cozinha e banheiro. Próximo à praia. Valor R$ 220.000,00 — pode ser financiado. Condomínio R$ 560,00 e IPTU R$ 165,00. Imóvel com 1 vaga de garagem, portaria, elevadores e prédio reformado.
+          </p>
+        </div>
+
+      </section>
+      </section>
+
+      <!-- Separador entre imóveis -->
+      <div style="height: 32px; border-bottom: 4px solid #94a3b8; margin: 24px 0;"></div>
+
+      <!-- Quinto Imóvel (conteúdo Ocian – alinhado ao card 5 da index) -->
+      <section id="imovel5" class="property-card-section">
+      <span class="property-section-number" aria-hidden="true">5</span>
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Navegação estrutural">
+        <a href="index.html">Home</a>
+        <span>></span>
+        <a href="index.html#galeria">Imóveis</a>
+        <span>></span>
+        <a href="index.html#galeria">À venda</a>
+        <span>></span>
+        <a href="index.html#galeria">Apartamento</a>
+        <span>></span>
+        <a href="index.html#galeria">Praia Grande</a>
+        <span>></span>
+        <a href="index.html#galeria">Ocian</a>
+        <span>></span>
+        <span>Apto de 3 quartos à venda, 72m²</span>
+      </nav>
+
+      <!-- Título e preço -->
+      <div class="property-header">
+        <div class="property-title-section">
+          <h1 class="property-title">
+            Apto de 3 quartos à venda, 72m² – Ocian – Praia Grande/SP – R$ 310.000,00
+          </h1>
+        </div>
+        <div class="property-header-right">
+          <button class="share-button" aria-label="Compartilhar" onclick="shareProperty5()">
+            <i class="fas fa-share-alt"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Galeria de imagens (card4 – Ocian) -->
+      <section class="gallery-section">
+        <div class="gallery-grid">
+          <div class="gallery-item gallery-item--large" onclick="openGallery4(0)">
+            <img src="imagens/galeria/card4/1.png" alt="Imagem 1 do imóvel" />
+          </div>
+          <div class="gallery-item" onclick="openGallery4(1)">
+            <img src="imagens/galeria/card4/2.png" alt="Imagem 2 do imóvel" />
+          </div>
+          <div class="gallery-item" onclick="openGallery4(2)">
+            <img src="imagens/galeria/card4/3.png" alt="Imagem 3 do imóvel" />
+          </div>
+          <div class="gallery-item" onclick="openGallery4(3)">
+            <img src="imagens/galeria/card4/4.png" alt="Imagem 4 do imóvel" />
+          </div>
+          <div class="gallery-item" onclick="openGallery4(4)">
+            <img src="imagens/galeria/card4/5.png" alt="Imagem 5 do imóvel" />
+          </div>
+          <div class="gallery-item" onclick="openGallery4(5)">
+            <img src="imagens/galeria/card4/6.png" alt="Imagem 6 do imóvel" />
+          </div>
+          <div class="gallery-item" onclick="openGallery4(6)">
+            <img src="imagens/galeria/card4/7.png" alt="Imagem 7 do imóvel" />
+          </div>
+          <div class="gallery-item" onclick="openGallery4(7)">
+            <img src="imagens/galeria/card4/8.png" alt="Imagem 8 do imóvel" />
+          </div>
+          <div class="gallery-item" onclick="openGallery4(8)">
+            <img src="imagens/galeria/card4/9.png" alt="Imagem 9 do imóvel" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Informações do imóvel -->
+      <section class="property-info">
+        <div class="info-section">
+          <h2 class="info-title">Características do Imóvel</h2>
+          <div class="info-grid">
+            <div class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M7 10a5 5 0 0 1 10 0v6.5" />
+                <path d="M5 16.5h14" />
+                <path d="M8 21h1.5" />
+                <path d="M14.5 21H16" />
+              </svg>
+              <div class="info-item-content">
+                <span class="info-item-label">Quartos</span>
+                <span class="info-item-value">3</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 12h16l-2-5.5A2 2 0 0 0 16.15 5H7.85A2 2 0 0 0 6 6.5Z" />
+                <path d="M2 12h20" />
+                <path d="M5 12v4.5A1.5 1.5 0 0 0 6.5 18h0A1.5 1.5 0 0 0 8 16.5V12" />
+                <path d="M16 12v4.5A1.5 1.5 0 0 0 17.5 18h0A1.5 1.5 0 0 0 19 16.5V12" />
+              </svg>
+              <div class="info-item-content">
+                <span class="info-item-label">Vagas</span>
+                <span class="info-item-value">1 vaga</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 4h16v16H4z" />
+                <path d="M4 12h16M12 4v16" />
+              </svg>
+              <div class="info-item-content">
+                <span class="info-item-label">Área Total</span>
+                <span class="info-item-value">72 m²</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-item-content">
+                <span class="info-item-label">Condomínio</span>
+                <span class="info-item-value">R$ 507,00</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-item-content">
+                <span class="info-item-label">IPTU</span>
+                <span class="info-item-value">R$ 250,00</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-item-content">
+                <span class="info-item-label">Valor do Imóvel</span>
+                <span class="info-item-value">R$ 310.000,00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h2 class="info-title">Descrição</h2>
+          <p class="info-description">
+            Apartamento de 3 quartos com 72 m² à venda no bairro Ocian, Praia Grande/SP. Imóvel com sala, cozinha americana, área de serviço, banheiro, corredor e garagem. Condomínio R$ 507,00 e IPTU R$ 250,00. Valor: R$ 310.000,00.
           </p>
         </div>
 
